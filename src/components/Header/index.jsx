@@ -2,20 +2,17 @@ import React, { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import QuestionCard from "../QuestionCard";
 
-export default function Header({ currentQuestion, totalQuestions }) {
+export default function Header({ currentQuestion}) {
   const [timeAtual, setTimeAtual] = useState(0);
 
   useEffect(() => {
-    setTimeAtual(0);
-  }, [currentQuestion]);
 
-  useEffect(() => {
     const timerId = setInterval(() => {
       setTimeAtual((prev) => prev + 1);
     }, 1000);
 
     return () => clearInterval(timerId);
-  }, []);
+  }, [currentQuestion]); 
 
   return (
     <header className={styles.header}>
