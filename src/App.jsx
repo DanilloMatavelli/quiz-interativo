@@ -1,24 +1,26 @@
 import { useState } from "react";
+import Header from "./components/Header";
 import QuestionCard from "./components/QuestionCard";
 import questions from "./data/questions";
-import Header from "./components/Header";
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleAnswer = (answer) => {
-
-    setCurrentIndex(currentIndex + 1);
+    setCurrentIndex(prev => prev + 1); // avança a questão
   };
 
   return (
-    <><Header />
     <div>
-      <QuestionCard
-        question={questions[currentIndex]}
-        onAnswer={handleAnswer} />
-    </div></>
+      <Header currentQuestion={currentIndex + 1} />
+      <QuestionCard 
+        question={questions[currentIndex]} 
+        onAnswer={handleAnswer} 
+      />
+    </div>
   );
 }
 
 export default App;
+
+// deixe o css assim do header 

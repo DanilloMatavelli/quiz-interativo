@@ -6,6 +6,7 @@ export default function Header({ currentQuestion}) {
   const [timeAtual, setTimeAtual] = useState(0);
 
   useEffect(() => {
+    setTimeAtual(0)
 
     const timerId = setInterval(() => {
       setTimeAtual((prev) => prev + 1);
@@ -20,9 +21,9 @@ export default function Header({ currentQuestion}) {
 
       <div className={styles.informacoes}>
         <p>
-          Questão <span>{currentQuestion}</span> / 10
+          Questão <span>{currentQuestion}</span> de 10
         </p>
-        <p>Tempo gasto: {timeAtual}s</p>
+        <p>Tempo: {timeAtual}s</p>
       </div>
     </header>
   );
