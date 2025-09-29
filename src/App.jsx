@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './App.module.css'
+import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <h1>Projeto Funcionando</h1>
+    <Header/>
   )
 }
 

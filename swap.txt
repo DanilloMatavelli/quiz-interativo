@@ -1,0 +1,168 @@
+Quiz Interativo
+Objetivo
+Criar um quiz interativo utilizando React, onde o usuário poderá responder a um
+conjunto de questões, ver o tempo gasto em cada questão e avançar para a
+próxima. Esta atividade visa aplicar conhecimentos de:
+
+1. useState e useEffect
+2. Passagem de props
+3. CSS Modules
+4. Componentes por responsabilidade
+5. Manipulação de tempo e estado
+
+Requisitos Funcionais
+
+O Quiz deve conter 10 questões, cada uma com 5 opções (A, B, C, D, E).
+
+O componente Header deve exibir:
+1. Título do quiz
+2. Questão atual / total de questões
+3. Timer da questão
+4. O timer deve iniciar em cada questão e reiniciar ao passar para a
+próxima.
+5. Cada questão deve ter botões para as respostas, centralizados, com
+letras A, B, C, D, E.
+6. Ao clicar em uma resposta, o quiz deve avançar para a próxima questão.
+7. Layout usando CSS Modules
+
+Componente QuestionCard
+É responsável por exibir o enunciado da questão e suas alternativas de resposta
+durante o quiz. Ele organiza visualmente a pergunta e cria botões para cada
+opção, permitindo que o usuário escolha uma delas.
+
+Requisitos Funcionais
+
+1. Exibir o enunciado da questão em destaque.
+2. Listar as alternativas como botões clicáveis, cada uma prefixada com
+as letras A, B, C, D, E.
+3. Ao clicar em um botão, chamar próxima pergunta e guardar a resposta
+selecionada
+
+Estrutura de Pastas
+src/
+├─ components/
+│ ├─ Header/
+│ │ ├─ index.jsx
+│ │ └─ Header.module.css
+│ ├─ QuestionCard/
+│ │ ├─ index.jsx
+│ │ └─ QuestionCard.module.css
+│ ├─ ScoreBoard/
+│ │ ├─ index.jsx
+│ │ └─ ScoreBoard.module.css
+├─ data/
+│ └─ questions.js
+├─ App.jsx
+├─ App.module.css
+├─ main.jsx
+
+Array de Questões
+
+[
+ {
+ id: 1,
+ question: "Qual hook é usado para gerenciar estados em componentes
+funcionais?",
+ options: ["useEffect", "useState", "useProps", "useClass"],
+ answer: "useState",
+ points: 2
+ },
+ {
+ id: 2,
+ question: "Qual hook é usado para efeitos colaterais no React?",
+ options: ["useMemo", "useEffect", "useReducer", "useRef"],
+ answer: "useEffect",
+ points: 3
+ },
+ {
+ id: 3,
+ question: "Qual é a forma correta de passar dados entre componentes?",
+ options: ["Hooks", "Props", "State", "Redux"],
+ answer: "Props",
+ points: 1
+ },
+ {
+ id: 4,
+ question: "Qual extensão normalmente é usada para arquivos de
+componentes React?",
+ options: [".js", ".jsx", ".html", ".css"],
+ answer: ".jsx",
+ points: 1
+ },
+ {
+ id: 5,
+ question: "Qual comando cria um novo projeto React com Vite?",
+ options: [
+ "npx create-react-app",
+ "npm init vite@latest",
+ "npm install vite",
+ "npx react-vite"
+ ],
+ answer: "npm init vite@latest",
+ points: 2
+ },
+ {
+ id: 6,
+ question: "Qual hook pode ser usado para armazenar valores entre
+renderizações sem causar re-render?",
+ options: ["useState", "useEffect", "useRef", "useMemo"],
+ answer: "useRef",
+ points: 4
+ },
+ {
+ id: 7,
+ question: "Qual hook é mais indicado para memorizar valores derivados de
+cálculos caros?",
+ options: ["useReducer", "useMemo", "useEffect", "useCallback"],
+ answer: "useMemo",
+ points: 5
+ },
+ {
+ id: 8,
+ question: "Qual hook é usado para funções que precisam ser
+memorizadas?",
+ options: ["useEffect", "useCallback", "useMemo", "useState"],
+ answer: "useCallback",
+ points: 4
+ },
+ {
+ id: 9,
+ question: "Em React, como chamamos o processo de atualizar a interface
+quando o estado muda?",
+ options: ["Binding", "Re-renderização", "Rebuild", "Patch"],
+ answer: "Re-renderização",
+ points: 3
+ },
+ {
+ id: 10,
+ question: "Qual ferramenta é usada para inspecionar o estado e props de
+componentes React no navegador?",
+ options: ["Redux DevTools", "React DevTools", "Chrome Inspector", "Vite
+Plugin"],
+ answer: "React DevTools",
+ points: 2
+ }
+]
+
+Componente ScoreBoard
+
+O componente ScoreBoard deve exibir o resultado do quiz após o usuário
+responder todas as questões.
+
+Requisitos Funcionais
+
+Exibir cada questão respondida organizar em um card ou tabela.
+Para cada questão, mostrar:
+1. Enunciado da questão
+2. Resposta escolhida pelo usuário
+3. Resposta correta
+4. Pontuação da questão
+5. Tempo gasto para responder
+6. Destacar visualmente:
+7. Perguntas corretas em verde
+8. Perguntas incorretas em vermelho
+Exibir resumo no topo:
+9. Pontuação final (soma das pontuações das questões corretas)
+10.Menor tempo de resposta
+11.Total de acertos e percentual de acertos
+12.Incluir um botão “Reiniciar Quiz” para reiniciar a atividade.

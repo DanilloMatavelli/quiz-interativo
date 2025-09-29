@@ -1,0 +1,23 @@
+.header {
+  background-color: #1e1e2f;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: bold;
+  color: #61dafb;
+}
+
+.informacoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
